@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "etm-tts"
+version = "0.1.0"
+description = "On-device text to speech in 23 languages."
+readme = "README.md"
+requires-python = ">=3.11"  # onnxruntime >= 1.28, which the model files need, has no wheels for 3.10
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{ name = "ETM-Network" }]
+dependencies = [
+    "numpy>=1.24",
+    "onnxruntime>=1.28",
+    "huggingface_hub>=0.24",
+]
+
+[project.optional-dependencies]
+mlx = ["mlx>=0.32; sys_platform == 'darwin'"]
+test = ["pytest"]
+
+[project.scripts]
+etm-tts = "etm_tts.cli:main"
+
+[project.urls]
+Homepage = "https://etmnetwork.de"
+Source = "https://github.com/ETM-Network/jade"
+Model = "https://huggingface.co/ETM-Network/jade-1.1"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/etm_tts"]

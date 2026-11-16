@@ -1,0 +1,10 @@
+etm-tts
+Copyright 2026 Mensch, Nina! UG (haftungsbeschränkt), trading as ETM-Network
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The model architecture, re-implemented here for MLX in py/src/etm_tts/backends/mlx_model.py, follows EMA Lightning
+by Canberk Aslan (https://github.com/canberk7/ema-lightning), licensed under the Apache License, Version 2.0.
+
+The model weights it downloads are not part of this product. They are published separately under the
+BigScience OpenRAIL-M licence, which restricts certain uses; see https://huggingface.co/ETM-Network/jade-1.1.
